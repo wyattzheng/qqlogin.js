@@ -1,4 +1,4 @@
-var net=require("../net/net.js");
+var net=require("zhynet");
 var qqrsa=require("./qqrsa.js");
 var loginsig="xiZxkDUforw0tCgxtXwxayR*GniKvthKM0WiwiNJiD4TjdQuFhhzeQok7Wy2VgEs";
 function g_tk(skey){
