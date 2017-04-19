@@ -1,4 +1,4 @@
-var net=require("zhynet");
+var net=require("zhynet.js");
 var qqrsa=require("./qqrsa.js");
 var loginsig="xiZxkDUforw0tCgxtXwxayR*GniKvthKM0WiwiNJiD4TjdQuFhhzeQok7Wy2VgEs";
 function g_tk(skey){
@@ -20,7 +20,7 @@ let tmparr=net.substr(res,"ptui_checkVC(","');").split(",");
 		let salt=""+qq+"";
 		let verifysession_v1=net.substr(tmparr[3],"'","'");
 		let encryptedpw=qqrsa.getEncryption(pswd,salt,verCode,"");
-return Net.get("http://ptlogin2.qq.com/login?u="+qq+"&p="+encodeURIComponent( encryptedpw)+"&verifycode="+verCode+"&aid=715030901&u1=http%3A%2F%2Fqun.qq.com%2F&h=1&ptredirect=1&ptlang=2052&daid=73&from_ui=1&dumy=&low_login_enable=0&regmaster=&fp=loginerroralert&action=5-16-1426352948143&mibao_css=&t=1&g=1&js_ver=10114&js_type=1&login_sig=xiZxkDUforw0tCgxtXwxayR*GniKvthKM0WiwiNJiD4TjdQuFhhzeQok7Wy2VgEs&pt_uistyle=17&pt_randsalt=0&pt_vcode_v1=0&pt_verifysession_v1="+verifysession_v1);
+return Net.get("http://ptlogin2.qq.com/login?u="+qq+"&p="+encodeURIComponent( encryptedpw)+"&verifycode="+verCode+"&aid=715030901&u1=http%3A%2F%2Fqun.qq.com%2F&h=1&ptredirect=1&ptlang=2052&daid=73&from_ui=1&dumy=&low_login_enable=0&regmaster=&fp=loginerroralert&action=5-16-1426352948143&mibao_css=&t=1&g=1&js_ver=10114&js_type=1&login_sig="+loginsig+"&pt_uistyle=17&pt_randsalt=0&pt_vcode_v1=0&pt_verifysession_v1="+verifysession_v1);
 })
 .then((res)=>{
 	if(res.indexOf("登录成功！")==-1){no(res);return;}
